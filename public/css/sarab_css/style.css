@@ -1,0 +1,164 @@
+
+/* ===================== MENU ===================== */
+#menu {
+  background: var(--light);
+}
+/* FIX 3 â€” Filter buttons */
+.filtbtn {
+  border: 2px solid #e5e5e5;
+  background: #fff;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 3px;
+  font-family: "Poppins", sans-serif;
+}
+.filtbtn.active,
+.filtbtn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 5px 18px rgba(232, 40, 26, 0.24);
+}
+.mwrap {
+  transition: 0.35s;
+}
+.mwrap.gone {
+  display: none !important;
+}
+.mcard {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.4s;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+}
+.mcard:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.13);
+}
+.mimg {
+  position: relative;
+  overflow: hidden;
+  height: 215px;
+  background: var(--cream2);
+}
+.mimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+.mcard:hover .mimg img {
+  transform: scale(1.09);
+}
+.mbdg {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 7px;
+  padding: 3px 11px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.mbdg.new {
+  background: var(--green);
+}
+.mbdg.hot {
+  background: var(--secondary);
+  color: var(--dark);
+}
+/* FIX 4 â€” Heart & Plus buttons stop propagation */
+.mhrt {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+}
+.mhrt:hover {
+  color: var(--primary);
+  transform: scale(1.18);
+}
+.mbody {
+  padding: 18px;
+}
+.mcat {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+.mtit {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-family: "Playfair Display", serif;
+}
+.mdesc {
+  font-size: 0.78rem;
+  color: #aaa;
+  margin-bottom: 13px;
+  line-height: 1.5;
+}
+.mfoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mprice {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: "Playfair Display", serif;
+}
+.mprice small {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #ccc;
+  text-decoration: line-through;
+  margin-left: 5px;
+}
+.mstars {
+  font-size: 0.73rem;
+  color: var(--secondary);
+}
+/* FIX 4 â€” Plus button opens detail popup */
+.madd {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #c01e12);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 11px rgba(232, 40, 26, 0.28);
+}
+.madd:hover {
+  transform: scale(1.15) rotate(90deg);
+}
+
+/* ===================== SPECIAL OFFER ===================== */

@@ -1,0 +1,27 @@
+.form-control{
+    display: block;
+
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0;
+
+    height: 52px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 14px;
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+
+    display: block;
+    width: 100%;
+}
+
+.form-control:focus{
+    color: #212529;
+    background-color: transparent;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
