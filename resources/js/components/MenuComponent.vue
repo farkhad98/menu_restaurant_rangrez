@@ -124,7 +124,9 @@
                                         <h3>{{translate(product, 'title')}}</h3>
                                         <span class="product-weight">{{formatWeight(product.netto)}}</span>
                                     </div>
-                                    <p>{{plainText(translate(product, 'description'))}}</p>
+                                    <p class="product-description-preview">
+                                        {{plainText(translate(product, 'description'))}}
+                                    </p>
                                     <div class="product-footer">
                                         <strong>{{formatPrice(product.price_uzs)}}</strong>
                                         <button
@@ -376,12 +378,19 @@ export default {
                 return ''
             }
 
-            let valueWithSpaces = String(value)
-                .replace(/<br\s*\/?\s*>/gi, ' ')
-                .replace(/<\/(p|div|li|h[1-6])>/gi, ' ')
-            let documentFromHtml = new DOMParser().parseFromString(valueWithSpaces, 'text/html')
+            let valueWithLineBreaks = String(value)
+                .replace(/\r\n?/g, '\n')
+                .replace(/<br\s*\/?\s*>/gi, '\n')
+                .replace(/<\/(p|div|li|h[1-6])>/gi, '\n')
+            let documentFromHtml = new DOMParser().parseFromString(valueWithLineBreaks, 'text/html')
 
-            return (documentFromHtml.body.textContent || '').replace(/\s+/g, ' ').trim()
+            return (documentFromHtml.body.textContent || '')
+                .replace(/\u00a0/g, ' ')
+                .replace(/[ \t]+\n/g, '\n')
+                .replace(/\n[ \t]+/g, '\n')
+                .replace(/[ \t]{2,}/g, ' ')
+                .replace(/\n{3,}/g, '\n\n')
+                .trim()
         },
 
         formatWeight(weight) {

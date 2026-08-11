@@ -481,8 +481,19 @@ button {
     margin: 14px 0 20px;
     color: var(--color-muted);
     font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-line;
     overflow-wrap: anywhere;
     word-break: break-word;
+}
+
+.product-description-preview {
+    display: -webkit-box;
+    max-height: 6em;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
 }
 
 .product-footer {
