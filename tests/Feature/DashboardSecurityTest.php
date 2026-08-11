@@ -98,6 +98,7 @@ class DashboardSecurityTest extends TestCase
         $response->assertRedirect(route('products.edit', $product->id));
         $this->assertStringEndsWith('.webp', $product->preview_image);
         Storage::assertExists($path);
+        $this->assertSame('public', Storage::getVisibility($path));
         $this->assertSame('image/webp', $imageInfo['mime']);
         $this->assertLessThanOrEqual(Product::MAX_SAVED_IMAGE_SIDE, max($imageInfo[0], $imageInfo[1]));
     }

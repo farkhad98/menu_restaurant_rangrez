@@ -33,6 +33,7 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => env('FILESYSTEM_LOCAL_ROOT', public_path()),
+            'visibility' => 'public',
         ],
 
         'public' => [

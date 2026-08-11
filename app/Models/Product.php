@@ -174,7 +174,7 @@ class Product extends Model
         $filename = Str::random(20) . '.webp';
         $path = 'uploads/products/' . $this->id . '/' . $filename;
 
-        if (!Storage::put($path, $imageContents)) {
+        if (!Storage::put($path, $imageContents, 'public')) {
             throw ValidationException::withMessages([
                 'preview_image' => 'Не удалось сохранить изображение. Проверьте доступ к папке uploads.',
             ]);
